@@ -1,0 +1,46 @@
+body{
+ background-color: #aaa8a5;
+ box-sizing: border-box;
+}
+
+p{
+font-family: 'Righteous', sans-serif;
+}
+
+.img-caption{
+    width: 80%;
+    bottom: 10px;
+    left: 10%;
+    cursor: pointer;
+}
+
+
+#lightBoxContainer{
+    background-color: rgba(0 ,0 ,0, 0.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+
+#lightBox{
+    width: 50%;
+    height: 500px;
+    background-size: cover;
+    background-image: url(../images/3.jpg);
+}
+
+
+i{
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:768px) {
+    #lightBox{
+        width: 100%;
+        height: 80vh;
+}
+}
