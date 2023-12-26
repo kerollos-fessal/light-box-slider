@@ -20,7 +20,9 @@ var prevBtn = document.querySelector("#prevBtn");
 var nextBtn = document.querySelector("#nextBtn");
 var closeBtn = document.querySelector("#closeBtn");
 var currentIndex;
-var label = document.querySelectorAll(".labelParagraph")
+var label = document.querySelectorAll(".labelParagraph");
+var touchStartX = 0;
+var touchEndX = 0;
 
 
 for(let i=0 ; i< selectedImg.length ; i++){
@@ -90,3 +92,25 @@ document.addEventListener("click", function (e) {
     closeSlide();
   }
 })
+
+
+
+
+
+lightBoxItem.addEventListener("touchstart", function (e) {
+  touchStartX = e.touches[0].clientX;
+});
+
+lightBoxItem.addEventListener("touchend", function (e) {
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  var swipeDistance = touchEndX - touchStartX;
+  if (swipeDistance > 50) {
+    prevSlide();
+  } else if (swipeDistance < -50) {
+    nextSlide();
+  }
+}
