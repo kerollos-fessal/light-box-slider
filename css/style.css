@@ -29,6 +29,7 @@ font-family: 'Righteous', sans-serif;
     width: 50%;
     height: 500px;
     background-size: cover;
+    background-position: center;
     background-image: url(../images/3.jpg);
 }
 
@@ -44,3 +45,11 @@ i{
         height: 80vh;
 }
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .your-element {
+      width: 100%;
+    }
+  }
+  
